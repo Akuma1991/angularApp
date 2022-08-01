@@ -1,0 +1,85 @@
+<app-header [headerTrendingMovies]="trendingMovies"></app-header>
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-4 brdr mt-5">
+          <h2 class="mt-3">
+            Trending Movies <br />
+            To Wartch Right Now
+          </h2>
+      
+          <p class="second-color">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae ut libero
+            quam saepe quo impedit omnis. Ipsam officiis deleniti non praesentium nemo
+            .
+          </p>
+        </div>
+        <div *ngFor="let movie of trendingMovies" class="col-md-2 position-relative">
+          <div class="movie">
+            <a [routerLink]="['/moviedetails', movie.id]">
+              <img [src]="imagePrefix + movie.poster_path" class="w-100" alt="" />
+              <h3 class="h5 mt-2 text-center">{{ movie.title }}</h3>
+              <div class="vote position-absolute end-0 top-0">
+                {{ movie.vote_average }}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row pt-5">
+        <div class="col-md-4 brdr mt-5">
+          <h2 class="mt-3">
+            Trending Persons <br />
+            To Wartch Right Now
+          </h2>
+      
+          <p class="second-color">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae ut libero
+            quam saepe quo impedit omnis. Ipsam officiis deleniti non praesentium nemo
+            .
+          </p>
+        </div>
+        <div
+          *ngFor="let person of trendingPersons"
+          class="col-md-2 position-relative"
+        >
+          <div class="person">
+            <img
+              [src]="imagePrefix + person.profile_path"
+              class="w-100"
+              [alt]="person.name"
+            />
+            <h3 class="h5 mt-2 text-center">{{ person.name }}</h3>
+            <div class="vote position-absolute end-0 top-0">
+              {{ person.popularity }}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row pt-5">
+        <div class="col-md-4 brdr mt-5">
+          <h2 class="mt-3">
+            Trending Tvs <br />
+            To Wartch Right Now
+          </h2>
+      
+          <p class="second-color">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae ut libero
+            quam saepe quo impedit omnis. Ipsam officiis deleniti non praesentium nemo
+            .
+          </p>
+        </div>
+        <div *ngFor="let tv of trendingTvs" class="col-md-2 position-relative">
+          <div class="tv">
+            <img [src]="imagePrefix + tv.poster_path" class="w-100" [alt]="tv.name" />
+            <h3 class="h5 mt-2 text-center">{{ tv.name }}</h3>
+            <div class="vote position-absolute end-0 top-0">
+              {{ tv.ote_average }}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>

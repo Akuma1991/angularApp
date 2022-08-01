@@ -1,0 +1,62 @@
+<nav class="p-3 d-flex align-item-center justify-content-between fixed-top 0">
+  <ul class="list-unstyled d-flex">
+    <li *ngIf="isLogin" class="px-2">
+      <a routerLink="home">Home</a>
+    </li>
+    <li *ngIf="isLogin" class="px-2">
+      <a routerLink="about">About me</a>
+    </li>
+    <li *ngIf="isLogin" class="px-2">
+      <a routerLink="contacts">Contacts</a>
+    </li>
+  </ul>
+  <ul class="list-unstyled d-flex">
+    <li class="px-2">
+      <a><i class="fab fa-instagram"></i></a>
+    </li>
+    <li class="px-2">
+      <a><i class="fab fa-facebook"></i></a>
+    </li>
+
+    <li class="px-2">
+      <a><i class="fab fa-youtube"></i></a>
+    </li>
+    <li class="px-2 me-5">
+      <a><i class="fab fa-twitter"></i></a>
+    </li>
+
+    <li *ngIf="!isLogin" class="px-2">
+      <a routerLink="login">Login</a>
+    </li>
+    <li *ngIf="isLogin" class="px-2">
+      <!-- Example single danger button -->
+      <div class="btn-group ">
+        <li
+          type="button"
+          class="btn  border-0 dropdown-toggle  pt-0"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fas fa-user text-white"></i>
+      </li>
+        <ul class="dropdown-menu ">
+          <li><a class="dropdown-item text-dark" href="#">Name: <span class="text-primary fw-bold">{{userData.fist_name}}</span></a></li>
+          <li><a class="dropdown-item text-dark" href="#">LastName: <span class="text-primary fw-bold">{{userData.last_name}}</span></a></li>
+          <li><a class="dropdown-item text-dark" href="#">Age: <span class="text-primary fw-bold">{{userData.age}}</span></a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item text-dark" href="#"><span class="text-primary fw-bold">{{userData.email}}</span></a></li>
+        </ul>
+      </div>
+    </li>
+    <li *ngIf="!isLogin" class="px-2">
+      <a routerLink="register">Register</a>
+    </li>
+    <li *ngIf="isLogin" class="px-2">
+      <a routerLink="settings"><i class="fa fa-cog"></i></a>
+    </li>
+
+    <li *ngIf="isLogin" class="px-2" (click)="logOut()">
+      <a routerLink="">Logout</a>
+    </li>
+  </ul>
+</nav>
